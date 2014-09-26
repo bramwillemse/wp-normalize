@@ -1,11 +1,11 @@
 <?php /*
-	Plugin Name: Nelis
+	Plugin Name: Chram Base
 	Plugin URI: http://www.bramwillemse.nl
 	Description: Set of base functions
-	Version: 1.0
+	Version: 0.3
 	Author: Bram Willemse
 	Author URI: http://www.bramwillemse.nl
-	Tested up to: 3.9.2
+	Tested up to: 4.0
 */
 
 /* 	==============================================================

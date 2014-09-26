@@ -1,6 +1,6 @@
 <?php 
 
-class nelisBase {
+class chramBase {
 
 	/**
 	* Constructor
@@ -8,37 +8,33 @@ class nelisBase {
 	* @since  1.0
 	*/
     public function __construct() {		
-	   	// Scripts
+	   	# Scripts
 		add_filter( 'wp_default_scripts', array( &$this, 'dequeue_jquery_migrate' ) ); // Remove jQuery Migrate script
 		add_filter( 'style_loader_src',  array( &$this, 't5_remove_version' )); // Remove version numbers from stylesheets
 		add_filter( 'script_loader_src', array( &$this, 't5_remove_version' )); // Remove version numbers from scripts
 		
-		// Images
+		# Images
 		add_filter( 'upload_mimes', array( &$this, 'cc_mime_types' ) ); // Allow SVG upload
 
-		// Oembed
+		# Oembed
 		add_filter('oembed_providers', array( &$this, 'twitter_oembed' ) ); // Add support for Twitter embed
 		add_filter('oembed_dataparse', array( &$this, 'your_theme_embed_filter'), 90, 3 ); // Add box to Oembed video's and tweets for responsive support
 		add_filter('oembed_result', array( &$this, 'modify_youtube_embed_url')); // Modify  YouTube URL
 
-		// Users
+		# Users
 		add_filter( 'user_contactmethods', array( &$this, 'user_contactmethods'), 10, 1); // Add & remove certain contact information fields from user profile
 
-		// Plugins
+		# Plugins
 		add_filter("gform_init_scripts_footer", array( &$this, "init_scripts")); // Load Gravity Forms scripts in footer
 
-		// WordPress UI
-		// add_action('admin_menu', array( $this, 'remove_menus' )); // remove items from dashboard menu
-
-		// WP frontend
+		# WP frontend
 		add_action('init', array( &$this, 'remove_header_info')); // remove unnecessary header info
 		add_filter('the_category', array( &$this, 'remove_category_rel_from_category_list')); // Remove invalid rel attribute
 		add_filter('body_class', array( &$this, 'add_slug_to_body_class')); // Add page slug to body class
 		add_filter('the_content_more_link', array( &$this, 'remove_more_jump_link')); // remove jump to content in more-link
 		add_filter('excerpt_more', array( &$this, 'html5_blank_view_article')); // Add 'View Article' button instead of [...] for Excerpts
 
-
-		// WP backend
+		# WP backend
 		// add_action( 'admin_menu', array( &$this, 'adjust_the_wp_menu'), 999 ); // Remove items admin submenu
 		add_filter( 'admin_footer_text', array( &$this, 'custom_admin_footer')); // Customize admin footer text
 		add_filter( 'tiny_mce_before_init', array( &$this, 'fb_change_mce_options')); // Allow more HTML tags in the editor	
@@ -387,4 +383,4 @@ class nelisBase {
 		}
 	
 }
-new nelisBase(); ?>
+new chramBase(); ?>
