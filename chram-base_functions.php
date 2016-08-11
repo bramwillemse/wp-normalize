@@ -1,5 +1,4 @@
 <?php 
-
 class chramBase {
 
 	/**
@@ -22,6 +21,7 @@ class chramBase {
 		add_filter('oembed_result', array( &$this, 'modify_youtube_embed_url')); // Modify  YouTube URL
 
 		# Users
+		add_action('admin_init', array( &$this, 'edit_user_roles'));
 		add_filter( 'user_contactmethods', array( &$this, 'user_contactmethods'), 10, 1); // Add & remove certain contact information fields from user profile
 
 		# Plugins
@@ -129,9 +129,10 @@ class chramBase {
 	   	Users, roles & capabilities
 	   	========================================================================== */  
 
-		public function edit_user_roles() { // add 
+		public function edit_user_roles() {
 			// Add certain admin roles to editor
 			$_the_roles = new WP_Roles();
+
 			$_the_roles->add_cap('editor','list_users');
 			$_the_roles->add_cap('editor','edit_users');
 			$_the_roles->add_cap('editor','create_users');
@@ -338,7 +339,14 @@ class chramBase {
 			// remove_menu_page('edit-comments.php');
 
 			// Remove submenu item: 'Appearance > Customize'
-			remove_submenu_page('themes.php', 'customize.php');
+			remove_submenu_page( 'themes.php', 'themes.php' ); // hide the theme selection submenu
+			remove_submenu_page( 'themes.php', 'customize.php' ); 
+		    remove_submenu_page( 'themes.php', 'widgets.php' ); // hide the widgets submenu
+
+		    // these are theme-specific. Can have other names or simply not exist in your current theme.
+		    remove_submenu_page( 'themes.php', 'custom-header' );
+		    remove_submenu_page( 'themes.php', 'custom-background' );
+
 
 			// Conditional removals 
 			if(!current_user_can('edit_themes')) { // Remove items for editors and below
