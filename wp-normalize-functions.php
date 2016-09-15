@@ -1,5 +1,5 @@
 <?php 
-class chramBase {
+class normalizeWP {
 
 	/**
 	* Constructor
@@ -391,4 +391,4 @@ class chramBase {
 		}
 	
 }
-new chramBase(); ?>
+new normalizeWP(); ?>

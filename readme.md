@@ -6,6 +6,7 @@ It strips some parts I never use or don't want my users to see/use and adds some
 #TODO
 - Remove legacy code / unused modules
 - Create a roadmap
+- Split into modules
 - Add feature list to readme
-- Split into specific modules
+
 

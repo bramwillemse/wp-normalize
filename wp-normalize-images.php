@@ -1,5 +1,5 @@
 <?php 
-class chramImages {
+class normalizeImages {
 
 	/**
 	* Constructor
@@ -11,9 +11,9 @@ class chramImages {
 		add_filter( 'upload_mimes', array( &$this, 'cc_mime_types' ) ); // Allow SVG upload
     }
 
-	/* 	=============================================================================
+	/* 	========================================================================
 	   	Images
-	   	========================================================================== */
+	   	===================================================================== */
 
 	/*
 	 * Remove thumbnail width and height dimensions that prevent fluid images in the_thumbnail
@@ -32,5 +32,5 @@ class chramImages {
 	}
 			
 }
-new chramImages(); 
+new normalizeImages(); 
 ?>

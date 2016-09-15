@@ -11,7 +11,7 @@
 /* 	==============================================================
 	Load Custom Functions
    	============================================================== */  
-	include_once('chram-base_functions.php');
-	include_once('chram-images.php')
+	include_once('wp-normalize-functions.php');
+	include_once('wp-normalize-images.php')
 
 ?>
