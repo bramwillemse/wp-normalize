@@ -8,10 +8,8 @@
 	Tested up to: 4.6.1
 */
 
-/* 	==============================================================
-	Load Custom Functions
-   	============================================================== */  
-	include_once('wp-normalize-functions.php');
-	include_once('wp-normalize-images.php')
+require_once( 'vendor/autoload.php' );
+
+$normalizeWP = new normalizeWP();
 
 ?>

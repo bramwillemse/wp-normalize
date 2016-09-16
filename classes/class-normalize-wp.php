@@ -390,5 +390,5 @@ class normalizeWP {
 		    ));
 		}
 	
-}
-new normalizeWP(); ?>
+} 
+?>

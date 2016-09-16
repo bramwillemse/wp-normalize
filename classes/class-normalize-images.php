@@ -32,5 +32,4 @@ class normalizeImages {
 	}
 			
 }
-new normalizeImages(); 
-?>
+new normalizeImages();

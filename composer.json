@@ -1,0 +1,23 @@
+{
+    "name": "bramwillemse/wp-normalize",
+    "type": "wordpress-plugin",
+    "license": "GPLv3",
+    "description": "Normalize your WordPress system.",
+    "keywords": ["wordpress", "plugin"],
+    "homepage": "https://github.com/bramwillemse/wp-normalize",
+    "authors": [
+        {
+            "name": "Bram Willemse",
+            "email": "contact@bramwillemse.nl",
+            "homepage": "https://www.bramwillemse.nl"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "classmap": [
+            "classes/"
+        ]
+    }
+}

@@ -1,3 +1,6 @@
+vendor/*
+output/*
+
 # macOS
 .DS_Store
 
