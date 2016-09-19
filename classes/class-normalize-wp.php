@@ -118,6 +118,8 @@ class normalizeWP {
 		 * Modify YouTube Embed URL	
 		 */
 		public function modify_youtube_embed_url($html) {
+			$autoplay = '';
+			
 			if( get_field('video-popup') ) {
 				$autoplay = '&autoplay=1';
 			}
