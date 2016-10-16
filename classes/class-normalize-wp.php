@@ -9,6 +9,8 @@ class normalizeWP {
     public function __construct() {		
 	   	# Scripts
 		add_filter( 'wp_default_scripts', array( &$this, 'dequeue_jquery_migrate' ) ); // Remove jQuery Migrate script
+		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+		remove_action( 'wp_print_styles', 'print_emoji_styles' ); 		
 		add_filter( 'style_loader_src',  array( &$this, 't5_remove_version' )); // Remove version numbers from stylesheets
 		add_filter( 'script_loader_src', array( &$this, 't5_remove_version' )); // Remove version numbers from scripts
 		
